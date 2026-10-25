@@ -1,0 +1,21 @@
+{
+  "name": "mahjong",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "build": "node build.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "peer": "^1.0.2"
+  },
+  "dependencies": {
+    "peerjs": "^1.5.4"
+  },
+  "type": "module"
+}
