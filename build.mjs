@@ -14,4 +14,7 @@ const js = await bundle({});
 fs.writeFileSync('dist/index.html', site.replace('<script></script>', () => `<script>${js}</script>`));
 const ajs = await bundle({ __ARTIFACT__: 'true' });
 fs.writeFileSync('dist/artifact.html', `<title>Mahjong Night</title>\n<style>${css}</style>\n<div id="app" class="app"></div>\n<script>${ajs}</script>\n`);
+fs.mkdirSync('docs', { recursive: true });
+fs.copyFileSync('dist/index.html', 'docs/index.html');
+fs.writeFileSync('docs/.nojekyll', '');
 for (const f of ['index.html', 'artifact.html']) console.log('dist/' + f, (fs.statSync('dist/' + f).size / 1024).toFixed(0) + ' KB');
